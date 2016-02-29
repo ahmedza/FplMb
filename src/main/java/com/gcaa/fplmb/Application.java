@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 /*@EnableJpaRepositories*/
 @ComponentScan(basePackages="com.gcaa.fplmb")
-@ImportResource({"classpath:\\META-INF\\spring\\jms\\jms-context.xml"/*, "classpath:\\META-INF\\spring\\app-datasource.xml"})//{"classpath*:applicationContext.xml"*/})/*@ContextConfiguration(locations = {"classpath:\\META-INF\\spring\\jms\\jms-context.xml"})*/
+@ImportResource({/*"classpath:\\META-INF\\spring\\jms\\jms-context.xml"*//*, "classpath:\\META-INF\\spring\\app-datasource.xml"})//{"classpath*:applicationContext.xml"*/})/*@ContextConfiguration(locations = {"classpath:\\META-INF\\spring\\jms\\jms-context.xml"})*/
 public class Application{
 
 	

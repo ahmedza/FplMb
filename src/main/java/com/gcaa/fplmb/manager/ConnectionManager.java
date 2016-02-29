@@ -78,7 +78,7 @@ public class ConnectionManager {
 			e.printStackTrace();
 		}
 		Object connObject = jndiFactory.getObject();
-
+		
 		return jmsConnFactory;
 	}
 	
