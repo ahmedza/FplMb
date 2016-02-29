@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import com.gcaa.fplmb.model.TcpConnectionModel;
+import com.gcaa.fplmb.model.ConnectionInterface;
 import com.gcaa.fplmb.tcp.socket.FplMbSocket;
 
 @Component
@@ -22,9 +22,9 @@ public class MgpsTcpServer extends FplMbSocket {
 	private boolean terminate = false;
 	private ServerSocket serverSocket = null;
 	private List<Socket> connectedClients = new ArrayList<Socket>();
-	private TcpConnectionModel tcpConnModel = null;
+	private ConnectionInterface tcpConnModel = null;
 
-	public void init(TcpConnectionModel tcpServModel) throws Exception {
+	public void init(ConnectionInterface tcpServModel) throws Exception {
 		tcpConnModel = tcpServModel;
 		serverSocket = new ServerSocket(tcpServModel.getPort());
 		LOGGER.info("Server Socket is Running...");
@@ -72,7 +72,7 @@ public class MgpsTcpServer extends FplMbSocket {
 					&& message.substring(0, "broadcast".length()).equalsIgnoreCase("broadcast")) {
 /*				String clientName = message.substring("broadcast".length() + 1, message.indexOf("ExCxNAME"));*/
 				sendToClient(/*clientName.trim(),*/
-						"Response Message from Server - " + tcpConnModel.getSocketName() + " " + message);
+						"Response Message from Server - " + tcpConnModel.getInterfaceName() + " " + message);
 			}
 
 			if (message.length() >= "getClients".length()

@@ -9,7 +9,7 @@ import java.util.Scanner;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.gcaa.fplmb.model.TcpConnectionModel;
+import com.gcaa.fplmb.model.ConnectionInterface;
 import com.gcaa.fplmb.processor.MessageProcessor;
 
 public abstract class FplMbSocket {
@@ -20,7 +20,7 @@ public abstract class FplMbSocket {
 	
 	private static final Logger LOGGER = Logger.getLogger(FplMbSocket.class);
 
-	public abstract void init(TcpConnectionModel tcpServModel) throws Exception;
+	public abstract void init(ConnectionInterface tcpSocketModel) throws Exception;
 
     public void communicateToSocket(Socket remoteClientSocket){
 
