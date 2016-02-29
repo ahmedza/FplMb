@@ -1,14 +1,19 @@
 package com.gcaa.fplmb.manager;
 
+import java.util.Properties;
+
+import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.ObjectMessage;
 import javax.jms.Session;
+import javax.naming.Context;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
+import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.stereotype.Component;
 
 import com.gcaa.fplmb.model.IcaoAftnMessage;
@@ -33,4 +38,7 @@ public class PublishingManager {
 			}
 		});
 	}
+	
+	
+
 }

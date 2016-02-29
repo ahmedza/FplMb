@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="AFTN_MSG")
-public class AftnMessageEntity {
+public class AftnMessageEntity extends FplmbEntity{
 
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
